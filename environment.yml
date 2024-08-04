@@ -1,0 +1,16 @@
+name: megaline
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - tabulate
+  - pyarrow
+  - pip
+  - pandas-dq
+  - Jinja2
+  - cryptography
+#   - pip:
+#       - pandas-dq
