@@ -1,96 +1,96 @@
-# Megaline Plan Recommendation
+# Megaline Data Analysis Project
 
-## Descripción
+## Descripción General
 
-Este proyecto de machine learning está diseñado para ayudar a la compañía móvil Megaline a recomendar planes de servicios a sus clientes. Utilizando datos históricos de comportamiento de los clientes, se entrena un modelo de clasificación para predecir y sugerir uno de los nuevos planes: Smart o Ultra.
+Este proyecto se centra en el análisis de datos de los usuarios del servicio de telecomunicaciones Megaline. El objetivo principal es identificar patrones en el uso de los servicios y las diferencias en los ingresos entre diferentes regiones. El análisis incluye la limpieza de datos, el análisis exploratorio de datos y la aplicación de pruebas estadísticas para validar las hipótesis.
 
 ## Estructura del Proyecto
 
-```
-megaline-plan-recommendation/
-│
-├── data/
-│   ├── users_behavior.csv        # Dataset proporcionado
-│   └── processed_data.csv        # Dataset procesado (opcional)
-│
-├── notebooks/
-│   ├── 01_data_exploration.ipynb # Exploración y análisis inicial de los datos
-│   ├── 02_data_preprocessing.ipynb # Preprocesamiento de los datos
-│   ├── 03_model_training.ipynb   # Entrenamiento y validación de modelos
-│   └── 04_model_optimization.ipynb # Optimización de hiperparámetros
-│
-├── scripts/
-│   ├── data_preprocessing.py     # Script para el preprocesamiento de los datos
-│   ├── train_model.py            # Script para entrenar el modelo
-│   ├── optimize_model.py         # Script para optimizar el modelo
-│   └── evaluate_model.py         # Script para evaluar el modelo en el conjunto de prueba
-│
-├── models/
-│   └── best_model.pkl            # Modelo entrenado y optimizado guardado
-│
-├── reports/
-│   ├── model_performance.md      # Informe de rendimiento del modelo
-│   └── feature_importance.md     # Informe de importancia de características
-│
-├── requirements.txt              # Lista de dependencias del proyecto
-├── README.md                     # Descripción del proyecto y guía de uso
-└── LICENSE                       # Licencia del proyecto
+La estructura del proyecto es la siguiente:
 
 ```
-## Requisitos
+├───notebooks
+│   ├───1-data_wrangling.ipynb
+│   └───2-data_analysis.ipynb
+├───doc
+│   └───Descripcion del proyecto.md
+├───data
+│   ├───clean
+│   ├───raw
+│   ├───interim
+│   └───data_url.json
+├───megaline
+│   ├───__init__.py
+│   └───data_processing.py
+├───environment.yml
+├───.gitignore
+└───.idea
+    └───inspectionProfiles
+```
 
-- Python 3.7 o superior
-- Bibliotecas listadas en `requirements.txt`
+### Descripción de las Carpetas y Archivos
 
-## Instalación
+- **notebooks**: Contiene los notebooks de Jupyter utilizados para la limpieza y el análisis de datos.
+    - `1-data_wrangling.ipynb`: Notebook para la limpieza y transformación de los datos.
+    - `2-data_analysis.ipynb`: Notebook para el análisis exploratorio de datos y la aplicación de pruebas estadísticas.
+
+- **doc**: Documentación del proyecto.
+    - `Descripcion del proyecto.md`: Documento que describe el objetivo y el alcance del proyecto.
+
+- **data**: Contiene los datos en diferentes etapas del proceso.
+    - `clean`: Datos limpios y procesados.
+    - `raw`: Datos crudos sin procesar.
+    - `interim`: Datos en etapas intermedias de procesamiento.
+    - `data_url.json`: Archivo JSON que contiene las URL de los datos utilizados.
+
+- **megaline**: Módulo Python con scripts de procesamiento de datos.
+    - `__init__.py`: Archivo de inicialización del módulo.
+    - `data_processing.py`: Script con funciones para el procesamiento de datos.
+
+- **environment.yml**: Archivo de configuración de Conda que especifica las dependencias del entorno del proyecto.
+
+- **.gitignore**: Archivo que especifica los archivos y directorios que deben ser ignorados por Git.
+
+- **.idea**: Directorio de configuración de PyCharm.
+    - `inspectionProfiles`: Perfiles de inspección de código.
+
+## Configuración del Entorno
+
+Para configurar el entorno de este proyecto, sigue estos pasos:
 
 1. Clona el repositorio:
-    ```bash
-    git clone https://github.com/tu_usuario/megaline-plan-recommendation.git
-    cd megaline-plan-recommendation
-	```
-2. Crea y activa un entorno virtual:
-	```bash
-    python3 -m venv env
-    source env/bin/activate
-	```
 
-3. Instala las dependencias:
     ```bash
-    pip install -r requirements.txt
+    git clone <URL_DEL_REPOSITORIO>
+    cd megaline
     ```
 
-## Uso
+2. Crea y activa el entorno Conda:
 
-### Exploración de Datos
+    ```bash
+    conda env create -f environment.yml
+    conda activate megaline
+    ```
 
-Para explorar y analizar los datos, ejecuta el notebook `01_data_exploration.ipynb` en la carpeta `notebooks`.
-
-### Preprocesamiento de Datos
-
-Ejecuta el notebook `02_data_preprocessing.ipynb` o el script `scripts/data_preprocessing.py` para realizar el preprocesamiento de los datos.
-
-### Entrenamiento del Modelo
-
-Para entrenar el modelo, ejecuta el notebook `03_model_training.ipynb` o el script `scripts/train_model.py`.
-
-### Optimización del Modelo
-
-Ejecuta el notebook `04_model_optimization.ipynb` o el script `scripts/optimize_model.py` para optimizar los hiperparámetros del modelo.
-
-### Evaluación del Modelo
-
-Utiliza el script `scripts/evaluate_model.py` para evaluar el modelo entrenado y optimizado en el conjunto de prueba.
-
-## Informes
-
-Los informes sobre el rendimiento del modelo y la importancia de las características se pueden encontrar en la carpeta `reports`.
+3. Ejecuta los notebooks de Jupyter en la carpeta `notebooks` para realizar la limpieza y análisis de los datos.
 
 ## Contribuciones
 
-Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para discutir cualquier cambio que te gustaría realizar.
+Las contribuciones a este proyecto son bienvenidas. Para contribuir, por favor sigue los siguientes pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una rama con tu nueva funcionalidad o corrección de errores (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -am 'Agrega nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Crea un nuevo Pull Request.
 
 ## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
+## Contacto
+
+Para cualquier duda o consulta sobre este proyecto, por favor contacta a:
+
+- Nombre: Guillermo Alcantara
+- Discord: guillermoalcantara_26959
